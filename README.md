@@ -142,3 +142,9 @@ Merubah `-j DROP` menjadi `-j LOGGING`
 
 ### MOJOKERTO
 ![gambar](https://user-images.githubusercontent.com/55182321/103166772-f4b83680-4857-11eb-80bc-23a82daa7e3f.png)
+
+
+Akan tersimpan di /var/log/messages
+
+![gambar](https://user-images.githubusercontent.com/55182321/103167534-62fff780-485e-11eb-939c-2f803bd36942.png)
+
