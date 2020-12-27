@@ -74,7 +74,7 @@ Routing pada masing masing router adalah sebagai berikut
 Mengkonfigurasikan iptables sepeerti pada baris 1 yaitu `iptables -t nat POSTROUTING -o eth0 -j SNAT --to-source 10.151.72.82 -s 192.168.0.0/16` 
 ![gambar](https://user-images.githubusercontent.com/55182321/103166252-d1d75380-4852-11eb-9f45-00e0b1c62154.png)
 
-Hasil setelah iptables dijalankan:
+Hasil setelah iptables dijalankan, semua uml dapat mengakses internet:
 
 ![gambar](https://user-images.githubusercontent.com/55182321/103166284-2f6ba000-4853-11eb-8336-e8fcdd6a6b1f.png)
 
@@ -84,10 +84,18 @@ Hasil setelah iptables dijalankan:
 Mengkonfigrasikan iptables seperti pada baris 6 `iptables -A FORWARD -d 10.151.73.160/29 -p tcp --dport 22 -i eth0 -j DROP`
 ![gambar](https://user-images.githubusercontent.com/55182321/103166252-d1d75380-4852-11eb-9f45-00e0b1c62154.png)
 
+HASIL
+
+![gambar](https://user-images.githubusercontent.com/55182321/103167129-f33c3d80-485a-11eb-8a71-c504cb74bd7c.png)
 
 ## 3. Karena tim kalian maksimal terdiri dari 3 orang, Bibah meminta kalian untuk membatasi DHCP dan DNS server hanya boleh menerima maksimal 3 koneksi ICMP secara bersamaan yang berasal dari mana saja menggunakan iptables pada masing masing server, selebihnya akan di DROP.
 ### MALANG
+
 ![gambar](https://user-images.githubusercontent.com/55182321/103166747-a30fac00-4857-11eb-8b81-1367a82e0e1e.png)
+
+HASIL
+
+![gambar](https://user-images.githubusercontent.com/55182321/103167217-ea983700-485b-11eb-9116-e1d0238efa98.png)
 
 ### MOJOKERTO
 ![gambar](https://user-images.githubusercontent.com/55182321/103166772-f4b83680-4857-11eb-80bc-23a82daa7e3f.png)
@@ -95,12 +103,26 @@ Mengkonfigrasikan iptables seperti pada baris 6 `iptables -A FORWARD -d 10.151.7
 ## 4. Akses dari subnet SIDOARJO hanya diperbolehkan pada pukul 07.00 - 17.00 pada hari Senin sampai Jumat.
 ![gambar](https://user-images.githubusercontent.com/55182321/103166747-a30fac00-4857-11eb-8b81-1367a82e0e1e.png)
 
+HASIL
+
+![gambar](https://user-images.githubusercontent.com/55182321/103167341-f801f100-485c-11eb-8191-e3f2619012cf.png)
+
+![gambar](https://user-images.githubusercontent.com/55182321/103167378-44e5c780-485d-11eb-8bc5-952c2580711a.png)
+
+
 ## 5. Akses dari subnet GRESIK hanya diperbolehkan pada pukul 17.00 hingga pukul 07.00 setiap harinya.
 ![gambar](https://user-images.githubusercontent.com/55182321/103166747-a30fac00-4857-11eb-8b81-1367a82e0e1e.png)
 
+HASIL
+
+![gambar](https://user-images.githubusercontent.com/55182321/103167400-84acaf00-485d-11eb-8df0-bc8ef46823bd.png)
+
+![gambar](https://user-images.githubusercontent.com/55182321/103167419-a0b05080-485d-11eb-9cec-42d09f0fbe06.png)
+
+
 ## 6. Bibah ingin SURABAYA disetting sehingga setiap request dari client yang mengakses DNS Server akan didistribusikan secara bergantian pada PROBOLINGGO port 80 dan MADIUN port 80.
 
-Saya menyerah :)
+Saya sekip mas, sudah menyerah :)
 
 ## 7. Bibah ingin agar semua paket didrop oleh firewall (dalam topologi) tercatat dalam log pada setiap UML yang memiliki aturan drop.
 
